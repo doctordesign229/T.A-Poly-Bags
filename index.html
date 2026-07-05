@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.A Poly Bags | Faisalabad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation Section -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="T.A Poly Bags Logo" class="brand-logo">
+        </div>
+        <nav>
+            <a href="#home" class="nav-link active" onclick="switchPage('home')">Home</a>
+            <a href="#products" class="nav-link" onclick="switchPage('products')">Our Products</a>
+            <a href="#contact" class="nav-link" onclick="switchPage('contact')">Contact Us</a>
+            <a href="#profile" class="nav-link" onclick="switchPage('profile')">Business Profile</a>
+        </nav>
+    </header>
+
+    <!-- CONTENT PAGES WRAPPER -->
+    <main id="main-content">
+
+        <!-- 1ST PAGE: HOME & PORTFOLIO -->
+        <section id="home-page" class="page-view active-view">
+            <!-- Hero Banner Section -->
+            <div class="hero-video-mimic">
+                <div class="hero-overlay">
+                    <h1 class="fade-in-text">T.A Poly Bag</h1>
+                    <p class="sub-text">Premium Poly Solutions for Textile Industries</p>
+                    
+                </div>
+            </div>
+            
+            <!-- Portfolio Gallery on Scroll -->
+            <div class="portfolio-scroll-area">
+                <h2 class="section-title">Our Portfolio</h2>
+                <p class="section-subtitle">Specially manufactured PVC bags for textile packing</p>
+                
+                <!-- Factory images permanent yahan rahengi -->
+                <div id="portfolio-gallery" class="gallery-grid">
+                    <div class="item-card">
+                        <img src="images/portfolio1.jpg" alt="Cutting Unit">
+                        <div class="item-details">
+                            <h4>Cutting Unit</h4>
+                            <span class="badge">CUTTING</span>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <img src="images/portfolio2.jpg" alt="Stitching Unit">
+                        <div class="item-details">
+                            <h4>Stitching Unit</h4>
+                            <span class="badge">STITCHING</span>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <img src="images/portfolio3.jpg" alt="Raw Materials">
+                        <div class="item-details">
+                            <h4>Raw Materials</h4>
+                            <span class="badge">RAW MATERIAL</span>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <img src="images/portfolio4.jpg" alt="Packing Unit">
+                        <div class="item-details">
+                            <h4>Packing Unit</h4>
+                            <span class="badge">PACKING</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2ND PAGE: OUR PRODUCTS -->
+        <section id="products-page" class="page-view">
+            <div class="container">
+                <h2 class="section-title">Explore Our Products</h2>
+                <div id="dynamic-product-list" class="product-grid">
+                <!-- Admin added items inject here via main.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3RD PAGE: CONTACT US -->
+        <section id="contact-page" class="page-view">
+            <div class="contact-wrapper">
+                <div class="contact-form-side">
+                    <h3>Send Us A Message</h3>
+                    <form id="client-msg-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Message" rows="5" required></textarea>
+                        <button type="submit" class="submit-form-btn">SUBMIT</button>
+                    </form>
+                </div>
+                <div class="contact-info-side">
+                    <h3>Contact Information</h3>
+                    <div class="info-block">
+                        <strong>Call Us:</strong>
+                        <p>+92 300 7630880</p>
+                        <p>+92 309 7880880</p>
+                    </div>
+                    <div class="info-block">
+                        <strong>Gmail:</strong>
+                        <p>tapolybags@gmail.com</p>
+                    </div>
+                    <div class="info-block">
+                        <strong>Address:</strong>
+                        <p>Chak No.215, Bukhari town, Tower Wali galli, 1KM Bijli Ghar, Jaranwala Road, Faisalabad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4TH PAGE: BUSINESS PROFILE -->
+        <section id="profile-page" class="page-view">
+            <div class="profile-card">
+                <img src="logo.jpeg" alt="T.A Poly Bags" class="profile-center-logo">
+                <h2>T.A Poly Bags</h2>
+                <p class="brand-tagline">Premium Poly Packaging Solutions</p>
+                <hr class="divider">
+                <div class="capabilities-text">
+                    <h3>Our Specialization</h3>
+                    <p>"We manufacture high-quality PVC materials customized for home textile packaging, engineered specifically across two professional manufacturing categories:"</p>
+                    
+                    <div class="spec-lists">
+                        <div class="spec-box">
+                            <h4>Stitched Items</h4>
+                            <ul>
+                                <li>Blanket Bag</li>
+                                <li>Wire Bag</li>
+                                <li>Pillow Cover</li>
+                                <li>Suit Bag</li>
+                                <li>Comforter Bag</li>
+                            </ul>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Sealer & PP & PE Bags</h4>
+                            <ul>
+                                <li>Heat Sealed PVC Packings</li>
+                                <li>High-Strength PP Bags for Textiles</li>
+                                <li>Custom Transparent Sheets & Gauges</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIDDEN MANAGEMENT: ADMIN DASHBOARD (To add products dynamically) -->
+        <section id="admin-page" class="page-view">
+            <div class="admin-box">
+                <h2>Add New Product to Portfolio</h2>
+                <form action="http://localhost:3000/api/products/add" method="POST" enctype="multipart/form-data">
+                    <label>Product Name</label>
+                    <input type="text" name="productName" placeholder="e.g. Comforter Bag with Zipper" required>
+                    
+                    <label>Category Type</label>
+                    <select name="productCategory">
+                        <option value="Stitching">Stitched Bag</option>
+                        <option value="Sealer">Sealer Line Bag</option>
+                        <option value="PP-Bag">PP Bag</option>
+                        <option value="PPE-Bag">PE Bag</option>
+                    </select>
+
+                    <label>Product Image</label>
+                    <input type="file" name="productImage" accept="image/*" required>
+
+                    <button type="submit" class="admin-submit-btn">Upload & Add to Website</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. UNIVERSAL FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <img src="logo.jpeg" alt="Logo" class="footer-logo">
+                <p>T.A Poly Bags is a leading manufacturer of flexible plastic packaging polybags, stitched, and sealed PVC options for the textile market.</p>
+            </div>
+            <div class="footer-links-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home" onclick="switchPage('home')">Home</a></li>
+                    <li><a href="#products" onclick="switchPage('products')">Products</a></li>
+                    <li><a href="#contact" onclick="switchPage('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Products</h3>
+                <ul>
+                    <li>Blanket Bag</li>
+                    <li>Wire Bag</li>
+                    <li>Pillow Cover</li>
+                    <li>Suit Bag</li>
+                    <li>Comforter Bag</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Get In Touch</h3>
+                <p class="foot-inf"><strong>Contact Us:</strong> +92-300-7630880</p>
+                <p class="foot-inf"><strong>Location:</strong> Chak No.215, Bukhari town, Tower Wali galli, Jaranwala Road, Faisalabad.</p>
+                <p class="foot-inf"><strong>Mail Us:</strong> tapolybags@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © 2026 T.A Poly Bags. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
